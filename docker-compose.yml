@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  oracle:
+    container_name: ods-oracle
+    build: .
+    restart: always
+    environment:
+      ORACLE_SID: ${ORACLE_SID}
+      ORACLE_PDB: ${ORACLE_PDB}
+      ORACLE_PWD: ${ORACLE_PWD}
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-volume:/opt/oracle/oradata
+
+volumes:
+  oracle-volume:
