@@ -40,6 +40,6 @@ flyway {
 	url = props['ORACLE_URL']
 	user = props['ORACLE_USER']
 	password = props['ORACLE_PWD']
-	schemas = ['flyway', 'dbo', 'classic', 'people']
+	schemas = ['flyway']
 	locations = ['classpath:db/migration']
 }
