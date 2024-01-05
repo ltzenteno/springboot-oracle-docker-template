@@ -9,3 +9,5 @@ To run the oracle database locally in a Mac M1 chip, follow these instructions.
 ```shell
 brew install colima
 ```
+
+2. 
