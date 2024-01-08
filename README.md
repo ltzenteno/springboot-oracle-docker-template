@@ -87,3 +87,20 @@ You can create a connection inside GUI clients (i.e. TablePlus) like this:
 ![tableplus SYS user connection](docs/assets/tableplus_conn_sys.png)
 
 Now you are ready to code 👍
+
+# Making Test Containers to run in the `colima` runtime (IN PROGRESS)
+
+**TODO**: this hasn't been completely done, after setting the ENV vars, I still need to fix the "no database open" error when running the test with:
+
+```
+./gradlew clean test --info
+```
+
+see this [documentation](https://java.testcontainers.org/supported_docker_environment/#colima):
+
+```
+colima start --network-address
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+```

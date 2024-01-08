@@ -1,9 +1,14 @@
 spring:
   datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
     url: jdbc:tc:oracle:21-slim-faststart:///test-db
     username: admin
     password: secret
+    hikari:
+      maximum-pool-size: 2
   jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
+    show-sql: true
     properties:
       hibernate:
         default_schema: test-db
