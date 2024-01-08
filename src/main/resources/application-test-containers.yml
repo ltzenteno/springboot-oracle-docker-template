@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:tc:oracle:21-slim-faststart:///test-db
+    username: admin
+    password: secret
+  jpa:
+    properties:
+      hibernate:
+        default_schema: test-db
+    hibernate:
+      ddl-auto: validate  # automatically validates mapping, this feature will check that the entities match the created schema on app start-up. See: https://www.arhohuttunen.com/spring-boot-datajpatest/
+  flyway:
+    enabled: true

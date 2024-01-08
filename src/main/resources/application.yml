@@ -2,7 +2,7 @@ spring:
   config:
     import: optional:file:.env[.properties]
   application:
-    name: ods-remake
+    name: springboot-with-oracle
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
     url: ${ORACLE_URL}
